@@ -1,0 +1,225 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+/* 
+:root{
+    --orange:#ff7800;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+ }
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 20.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body{
+    background: #eee;
+}
+
+ .header{
+    position: relative;
+    top:0; left:0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    
+    
+}
+
+
+ 
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+ .header .logo i{
+color: var(--orange);
+height: 10%;
+width: 10%;
+
+}   
+.header .navbar a{
+    font-size: 20px;
+    margin:0 1rem;
+    color:var(--black)
+}
+.header .navbar a:hover{
+    color:var(--orange)
+}
+
+ .header .icons div{
+    height: 2.5rem;
+    width: 2.5rem;
+    text-align:center;
+    color: var(--black);
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.header .icons div:hover{
+    background: var(--orange);
+    color: #fff;
+}
+#menu-btn{
+    display: none;
+}
+
+.header .search-form{
+    position: absolute;
+    top:110%; right:-110%;
+    max-width: 50rem;
+    height:3rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.header .search-form.active{
+    right: 10px;
+    transition: .3s linear;
+
+}
+
+.header .search-form input{
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.2rem;
+    color: var(--black);
+    padding: 0 1.5rem;
+}
+
+.header .search-form label{
+    font-size: 15px;
+    padding-right: 1.5rem;
+    color:var(--black);
+    cursor: pointer;
+
+}
+
+.header .search-form label:hover{
+    color: var(--orange);
+}     */
+section{
+    padding: 1.5rem;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(./banner-bg.jpg) no-repeat;
+    margin-top: 65px;
+    background-position: center;
+    background-size: cover;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.home .content{
+    text-align: center;
+    width: 100%;
+}
+
+.home .content h3{
+    color: var(--black);
+    font-size: 3rem;
+}
+
+.home .content h3 span{
+    color: orange;
+    
+}
+
+.home .content p{
+    color:rgb(25, 57, 119);
+    font-size: 1rem;
+    padding: 1rem;
+    line-height: 1.8;
+
+}
+
+.btn{
+    border-radius: .5rem;
+    color: blue;
+    border: 2px solid black;
+}
+.btn:hover{
+    color: red;
+    background-color: black;
+}
+
+.heading{
+    text-align: center;
+    padding: 1rem 0;
+    padding-bottom: 1rem;
+    font-size: 2.5rem;
+    color: rgb(122, 168, 191); 
+}
+
+.heading span{
+    background: orange;
+    color: #fff;
+    display: inline-block;
+    padding: .2rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0% );
+}
+
+
+.features .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 20px;
+   justify-content: center;
+   text-align: center; 
+}
+
+.features .box-container .box{
+    padding: 1rem .5rem;
+    outline:var(--outline);
+    outline-offset: -1rem;
+    box-shadow: var(--box-shadow);
+}
+
+.features .box-container .box:hover{
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.container{
+    text-align: center;
+    font-size: larger;
+} 
+
+.card-body:hover{
+    outline: var(--outline-hover);
+    outline-offset: 0rem; 
+    color: blue;
+    background-color: gainsboro;
+    
+}

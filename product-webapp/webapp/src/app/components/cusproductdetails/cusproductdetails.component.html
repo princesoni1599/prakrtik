@@ -1,0 +1,27 @@
+<div class="card" >
+  
+    <div class="card-header">
+      Featured
+    </div>
+    <img src="data:image/png;base64,{{details.productImage}}"
+                    style="width: auto; height: 300px;" alt="Image">
+                    <!-- <app-product-image [plantmodel]="plantmodel"></app-product-image> -->
+                    <div class="card-body">
+                      <div style="width: 30%; float:left">
+                            <p><mat-icon matTooltip="Price">currency_rupee</mat-icon>&nbsp;&nbsp;{{details.productPrice}}/item</p>
+                            <p><mat-icon matTooltip="Quantity of plant available">production_quantity_limits</mat-icon>&nbsp;&nbsp;{{details.productsAvailable}}</p>
+                            <p><mat-icon matTooltip="Plant name">yard</mat-icon>&nbsp;&nbsp;{{details.productName}}</p>
+                            <p><mat-icon matTooltip="Address of seller">location_on</mat-icon>&nbsp;&nbsp;{{details.productAddress}}</p>
+                     </div>
+                     <div style="width: 50%; float:right">
+                      <p><mat-icon matTooltip="Toxicity">warning</mat-icon>&nbsp;&nbsp;{{details.toxicity}}</p>
+                      <p><mat-icon matTooltip="Size of plant">fullscreen</mat-icon>&nbsp;&nbsp;{{details.sizeOfProduct}}</p>
+                      <p><mat-icon matTooltip="Sunlight requirement">wb_sunny</mat-icon>&nbsp;&nbsp;{{details.sunlightRequirement}}</p>
+                      <p><mat-icon matTooltip="Water requirement">water_drop</mat-icon>&nbsp;&nbsp;{{details.waterRequirement}}</p>
+                     </div>            
+    </div>
+    <ul>
+      <li><p><mat-icon matTooltip="Plant description">description</mat-icon>&nbsp;&nbsp;{{details.description}}</p></li>
+    </ul>
+    <button class="btn btn-primary" (click)="buyNow()">PayNow</button>
+  </div>

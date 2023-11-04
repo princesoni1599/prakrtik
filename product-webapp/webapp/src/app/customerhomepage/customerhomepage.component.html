@@ -1,0 +1,137 @@
+<!--HOME section start-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<div>
+
+ <section class="home" id="home">
+  
+  <div class="content">
+    <h3>Fresh and <span>Organic</span> Products For You</h3>
+    <p style="font-weight: bold; font-size: 22px;">Keeping indoor plants has become a trend nowadays. Buy Cactus and Succulents online from Nurserylive at lowest price. Exciting Gifts & more. Get 6 Plants Free Buy Now. Diwali Offers. Shop Now. Plants worth ₹ 1500 Free. Types: Get 6 Plants Free, Diwali Offers.</p>
+    <!-- <a href="#" class="btn">Shop now </a> -->
+      <!-- <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+        
+              <button type="button" class="btn btn-search">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="white"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                  ></path>
+                </svg>
+              </button>
+            </form> -->
+            <div class="search-hero"style="justify-content: center;">
+              <input class="form-control" type="text" name="search" [(ngModel)]="psearch" autocomplete="off" placeholder="&#61442;   Start searching for a products" style="width: 700px; margin-left: 300px;  " >
+            </div>
+    
+  
+  </div>
+</section>
+ 
+<!--HOME section End-->
+
+
+
+<!--product section start-->
+
+<h1 class="heading"> Our <span>Products</span></h1>
+
+     <div class="container" *ngFor="let plantmodel of cards | searchByName: psearch" style="height: 20rem; margin-left: 20px;display: inline-block;justify-content: space-between; width: 300px;padding-top: 3%;" (click)="openDialog(plantmodel.productId)">
+      <mat-card class="card-body" style="width: 300px;margin-top: 10px;">
+              
+        <!-- <img (click)="openDialog(card.id)" style="height: 200px ;width: 200px;" src="assets/images/sunflower1.jpg" alt="Plant_Image" class="card-img-bottom ">             -->
+        <!-- <img (click)="openDialog(card.id)"[src]="retrivedImage" alt="Plant_Image" style="height: 200px ;width: 200px;"> -->
+        <app-product-image [plantmodel]="plantmodel"></app-product-image>
+  <p style="font-weight: bold;" ><mat-icon>shop</mat-icon> {{plantmodel.productName}}</p>
+  
+  <p  >{{plantmodel.description}}</p> 
+  <p style="font-weight: bold;">&#8377;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{plantmodel.productPrice}}</p> 
+  
+  <a href="#" class="btn">Buy Now</a>
+
+
+  </mat-card>
+  
+  </div>
+<!--Features section start-->
+
+<!-- <section class="features" id="features">
+
+  <h1 class="heading"> Our <span>Features</span></h1>
+
+  <div class="box-container">
+
+<div class="row">
+  
+
+
+    <div class="box col-4">
+      <mat-card>
+      <img src="/assets/feature-img-1.png" alt="">
+      <h3>Fresh And Organic</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil facilis minus hic porro voluptas beatae praesentium ipsa vero at .</p>
+      <a href="#" class="btn">Read more</a>
+    </mat-card>
+    </div>
+  
+
+
+  <div class="box col-4">
+    <mat-card>
+    <img src="/assets/feature-img-2.png" alt="">
+    <h3>Free Delivary</h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil facilis minus hic porro voluptas beatae praesentium ipsa vero at .</p>
+    <a href="#" class="btn">Read more</a>
+  </mat-card>
+  </div>
+
+  <div class="box col-4">
+    <mat-card>
+    <img src="/assets/feature-img-3.png" alt="">
+    <h3>Easy Payment</h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil facilis minus hic porro voluptas beatae praesentium ipsa vero at .</p>
+    <a href="#" class="btn">Read more</a>
+  </mat-card>
+  </div>
+</div>
+</div>
+</section> -->
+
+<!--Features section End-->
+
+<!--product section start-->
+
+<!-- <h1 class="heading"> Our <span>Products</span></h1>
+
+     <div class="container" *ngFor="let card of cards" style="height: 20rem; margin-left: 20px;display: inline-block;justify-content: space-between; width: 300px;padding-top: 3%;">
+      <mat-card class="card-body" style="width: 300px;margin-top: 10px;">
+              
+        <img (click)="openDialog(card.id)" style="height: 200px ;width: 200px;" src="assets/images/sunflower1.jpg" alt="Plant_Image" class="card-img-bottom ">            
+    
+  <p  style="font-size:small"><mat-icon>speaker_group</mat-icon> {{card.productName}}</p>
+  <p style="font-size:small">&#8377;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{card.productPrice}}</p> 
+  <p  style="font-size:small">{{card.description}}</p> 
+  <p  style="font-size:small">{{card.productAge}}</p>
+  
+  <a href="#" class="btn">Buy Now </a>
+
+
+  </mat-card>
+  </div> -->
+
+  
+  
+
+
+<!--product section end-->

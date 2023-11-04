@@ -1,0 +1,123 @@
+version: "2"
+services:
+  eureka-server:
+    build: eureka-server/
+    container_name: eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8076:8076
+  api-gateway:
+    build: api-gateway/
+    container_name: api-gateway
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8086:8086
+  authentication-service:
+    build: authentication-service/
+    container_name: authentication-service
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8081:8081
+  payment-service:
+    build: payment-service/
+    container_name: payment-service
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8084:8084
+  plant-service:
+    build: plant-service/
+    container_name: plant-service
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8082:8082
+  config-server:
+    build: config-server/
+    container_name: config-server
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8888:8888
+  customer-service:
+    build: customer-service/
+    container_name: customer-service
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8032:8032
+  registration-service:
+    build: registration-service/
+    container_name: registration-service
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8083:8083
+  product-webapp:
+    build: product-webapp/
+    image: product-webapp
+    depends_on:
+      - eureka-server
+      - api-gateway
+    restart: always
+    container_name: product-webapp
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "4200:4200"
+
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb-user"
+    hostname: localhost
+    ports:
+      - 27017:27017
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+
+  mysqlservice:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+#    hostname: localhost
+#    network_mode: "host"
+    ports:
+      - 3306:3306
+    #    cap_add:
+    #      - SYS_NICE
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Password'
+      MYSQL_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"

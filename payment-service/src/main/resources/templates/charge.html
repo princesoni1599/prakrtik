@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Charge</title>
+    <!--Bootstrap 4 CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap 4 JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!--Stripe JavaScript Library-->
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body class="bg-light pt-5">
+
+<!--hero section-->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-12 my-auto mx-auto">
+                <h1>
+                    Stripe One-Time Charge
+                </h1>
+                <p class="lead mb-4">
+                    Please fill the form below to complete the order payment
+                </p>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 id="price1" ></h5>
+                        <h5 id="productName1" ></h5>
+                        <p class="lead"></p>
+                    </div>
+                </div>
+                <input id="price" type="hidden" th:value="${price}">
+                <input id="productName" type="hidden" th:value="${productName}">
+                <input id="productId" type="hidden" th:value="${productId}">
+                <form action="#" id="payment-form" method="post">
+                    <input id="api-key" type="hidden" th:value="${stripePublicKey}">
+                    <div class="form-group">
+                        <label class="font-weight-medium" for="card-element">
+                            Enter credit or debit card below
+                        </label>
+                        <div class="w-100" id="card-element">
+                            <!-- A Stripe Element will be inserted here. -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="email" name="email"
+                               placeholder="Email Address" type="email" required>
+                    </div>
+                    <!-- Used to display Element errors. -->
+                    <div class="text-danger w-100" id="card-errors" role="alert"></div>
+                    <div class="form-group pt-2">
+                        <button class="btn btn-primary btn-block" id="submitButton" type="submit">
+                            Pay With Your Card
+                        </button>
+                        <div class="small text-muted mt-2">
+                            Pay securely with Stripe. By clicking the button above, you agree
+                            to our <a target="_blank" href="#">Terms of Service</a>,
+                            <a target="_blank" href="#">Privacy</a> and
+                            <a target="_blank" href="#">Refund</a> policies.
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(function () {
+
+
+
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = dd + '/' + mm + '/' + yyyy;
+
+
+        //it's a price variable that will use for data.
+        var price = "Rs: "+$('#price').val();
+        document.getElementById("price1").innerHTML = price;
+
+        //it's a product variable that will use for data.
+        var productName = "product: "+$('#productName').val();
+        document.getElementById("productName1").innerHTML = productName;
+
+        //it's a productId variable that will use for data.
+        var productId = $('#productId').val();
+
+        var API_KEY = $('#api-key').val();
+        // Create a Stripe client.
+        var stripe = Stripe(API_KEY);
+
+        // Create an instance of Elements.
+        var elements = stripe.elements();
+
+        // Create an instance of the card Element.
+        var card = elements.create('card');
+
+        // Add an instance of the card Element into the `card-element` <div>.
+        card.mount('#card-element');
+
+        // Handle real-time validation errors from the card Element.
+        card.addEventListener('change', function (event) {
+            var displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        // Handle form submission.
+        var form = document.getElementById('payment-form');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            // handle payment
+            handlePayments();
+        });
+        //handle card submission
+        function handlePayments() {
+                stripe.createToken(card).then(function (result) {
+                if (result.error) {
+                    // Inform the user if there was an error.
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                } else {
+                    // Send the token to your server.
+                    var token = result.token.id;
+                }
+               });
+               var email = $('#email').val();
+                var xhr = new XMLHttpRequest();
+                console.log(xhr);
+                var url = "http://localhost:8080/customer-service/api/v1/bookorder";
+                xhr.open("POST", url, true);
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var json = JSON.parse(xhr.responseText);
+                        console.log(json.email + ", " + json.password);
+                    }
+                };
+                var data1;
+                var data2;
+                async function foo1()
+              {
+                // api url
+                    const url1 =
+                          "http://localhost:8080/plant-service/api/v1/get/"+productId;
+
+                    // Defining async function
+                      const res = await fetch(url1)
+
+                      data2 = await res.json();
+
+                      console.log(data2);
+               }
+               foo1();
+              async function foo()
+              {
+                // api url
+                    const url =
+                          "http://localhost:8080/registration-service/api/v1/get/"+email;
+
+                    // Defining async function
+                      const res = await fetch(url)
+
+                      data1 = await res.json();
+
+                      console.log(data1);
+               }
+               foo();
+
+
+
+                stripe.createPaymentMethod({
+                type: 'card',
+                card: card,
+                billing_details: {
+                  name: 'jon',
+                },
+              })
+              .then(function(result) {
+                // Handle result.error or result.paymentMethod
+
+                if (result.error) {
+                    // Inform the user if there was an error.
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                    }
+                 else {
+                    // Send the token to your server.
+                    var token = result.paymentMethod.id;
+                    $.post(
+                        "/create-charge",
+                        {email: email, token: token},
+                        function (data) {
+
+                         var data = JSON.stringify({"customerName": data1.firstName+" "+data1.lastName , "customerEmailId": data1.email, "ownerEmailId":data2.ownerEmailId, shopName: data2.shopName, "productId": productId, "productName":productName, "customerAddress":data1.address, "ownerAddress": data2.productAddress, "cutomerContactNo":data1.contactNumber, "ownerContactNo":"8756635733", "orderDate":today, "productPrice":price,  "orderStatus":"BOOKED"});
+                         console.log(data);
+                         xhr.send(data);
+                        window.location.href="http://localhost:8080/payment-service/success";
+
+
+                        }, 'json');
+                }
+
+              });
+        }
+    });
+</script>
+
+</body>
+</html>

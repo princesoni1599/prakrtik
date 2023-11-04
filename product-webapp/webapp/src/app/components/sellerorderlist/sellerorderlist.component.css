@@ -1,0 +1,46 @@
+.card-title{
+  font-style: normal;
+  font-weight: bold;
+}
+.mat-card{
+  background-color: rgba(245, 222, 179, 0.59)
+}
+.container{
+  margin-top:65px;
+  width: max-content;
+  display: inline-block;
+  
+  flex: content;
+  font-size: small;
+}
+.mat-card{
+  background-color:whitesmoke
+}
+button{
+  background-color: rgba(218, 75, 75, 0.603);
+  border-radius: 5px;
+  color: rgb(13, 13, 13);
+  
+}
+button:hover{
+  background-color: yellowgreen;
+}
+.card-header{
+  font-size: 20px;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
+ background-color: rgba(86, 222, 86, 0.656);
+  
+}
+.card-body{
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Ar
+}
+.card-title{
+font-family: 'Times New Roman', Times, serif;
+}
+.card-img-bottom:hover{
+  border-radius: 2px;
+}
+.mat-icon{
+  color: rgb(177, 78, 188);
+}

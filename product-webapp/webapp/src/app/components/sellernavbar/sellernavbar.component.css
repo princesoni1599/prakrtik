@@ -1,0 +1,114 @@
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(3,3,41);
+    position: fixed ;
+    z-index: 5;
+   color: white;
+  }
+  /* mat-sidenav{
+  margin:16px;
+  width:200px;
+  color:white;
+  border-right: none;
+  background-color: #050448;
+  border-radius: 10px;
+  padding:16px;
+  text-align: center;
+  height:800px;
+  }*/
+
+  /* .content{
+   
+    margin: 16px;
+    margin-left: 32px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  background-color: #7e9a9a;
+    color:#7e9a9a;
+    border-radius:10px;
+    background-image:url(https://static.vecteezy.com/system/resources/previews/007/360/354/non_2x/close-up-of-nature-view-green-leaf-on-blurred-greenery-background-under-sunlight-with-bokeh-and-copy-space-using-as-background-natural-plants-landscape-ecology-wallpaper-concept-free-photo.jpg); 
+    background-repeat: no-repeat;
+     background-attachment: fixed;
+  background-size: cover;
+  } */
+  
+  /* mat-sidenav-container{
+  height:900px;
+  }
+  
+  .avatar{
+    width:130px;
+    height:130px;
+    margin:10px;
+  
+  }*/
+  .menu-button{
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+  .card-header{
+    padding-left:0px;
+  } 
+
+  mat-sidenav-container {
+    height: 100%;
+      
+  }
+
+  
+.chevron-button {
+          transition: 300ms ease-in-out;
+          transform: rotate(0deg);
+        }
+  
+.chevron-button.rotated {
+          transform: rotate(180deg);
+        }
+  mat-sidenav-content{
+    /* background-color: #426283; */
+    background-image: url(https://static.vecteezy.com/system/resources/previews/007/360/354/non_2x/close-up-of-nature-view-green-leaf-on-blurred-greenery-background-under-sunlight-with-bokeh-and-copy-space-using-as-background-natural-plants-landscape-ecology-wallpaper-concept-free-photo.jpg);
+ 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+ background-size: cover;
+ overflow: auto;
+ position:sticky;
+
+}
+mat-sidenav{
+background-color: rgb(3, 3, 41);
+color: white;
+display: flex;
+flex-direction: column;
+
+padding-left:10px;
+padding-right: 10px;
+padding-bottom: 16px;
+
+}
+
+button:hover{
+  background-color: black;
+  border-radius: 5px;
+
+}
+
+mat-icon{
+color: white;
+}
+
+.menu:hover{
+  background-color:rgb(3, 3, 41) ;
+  color:white;
+  
+}
