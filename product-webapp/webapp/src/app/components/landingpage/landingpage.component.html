@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  </style>
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    <!--Replace with your tailwind.css once created-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+
+    <style>
+        .gradient {
+          background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+        }
+      </style>
+
+</head>
+<body >
+    <!-- <div class="container" id="header">
+        <div class="row">
+          <div>
+            <a href="#" class="text-secondary" style="font-size:40px">Prakrtik</a>
+          </div> -->
+          <!-- <div class="col-sm"><input type="search" class="form-control rounded">
+        </div> -->
+    
+      <!-- </div>
+      </div> -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Prakrtik</a>
+        <!-- <div class="container">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link">login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">signUp</a>
+                </li>
+            </ul>
+        </div> -->
+        <div class="d-flex align-items-center navbar-nav ml-auto" >
+            <button type="button" class="btn btn-link px-3 me-2" routerLink="/register">
+              Login
+            </button>
+            <button type="button" class="btn btn-primary me-3" routerLink="/register">
+              Sign up for free
+            </button>
+        </div>
+        
+    </nav>
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+          </ol>
+          <div class="carousel-inner" style="max-height: 40vh"> 
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img style="height: 300px;" src="https://www.flowerpower.com.au/wordpress/wp-content/uploads/2018/10/Wide-crop-Bora-bora-hanging-planters-with-string-of-beans-and-rhipsalis-DSC_8805.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                        <h2 style="font-size: x-large;" class="display-4">Plants give us oxygen for the lungs and for the soul</h2>
+                        <!-- <p style="font-size: large;">Don't mind me!</p> -->
+                        <!-- <button type="button" class="btn btn-primary">Primary</button> -->
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img style="height: 300px;" src="https://www.pixelstalk.net/wp-content/uploads/images5/Aesthetic-Minimalist-Plant-Wallpaper-HD-1080p.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        <!-- <h5>Second slide label</h5> -->
+                        <p style="font-size: x-large;">If you plant a tree, you plant a life</p>
+                      </div>
+                    </div>
+               </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        </div>
+
+              
+              
+      <!--Features section start-->
+
+<section class="features" id="features">
+
+    <h1 class="heading"> Our <span>Features</span></h1>
+  
+    <div class="box-container">
+  
+  <div class="row">
+    
+  
+  
+    <div class="box col-4">
+     <mat-card>
+        <img src="/assets/feature-img-1.png" alt="">
+        <h3>Customer UI</h3>
+        <p>Easy to understand and detailed UI.</p>
+        <a href="#" class="btn">Read more</a>
+     </mat-card>
+    </div>
+    
+  
+  
+    <div class="box col-4">
+      <mat-card>
+      <img src="/assets/feature-img-2.png" alt="">
+      <h3>Easy Order</h3>
+      <p>Customer can order a product by just one click. After completion of Payment. It will redirect to order page. </p>
+      <a href="#" class="btn">Read more</a>
+      </mat-card>
+    </div>
+  
+    <div class="box col-4">
+      <mat-card>
+      <img src="/assets/feature-img-3.png" alt="">
+      <h3>Easy Payment</h3>
+      <p>Payment done by adding thir card details.</p>
+      <a href="#" class="btn">Read more</a>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row">
+    <div class="box col-4">
+        <mat-card>
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRieKfpLWxIJZGXslh9Zj05ykb3P_zU0dHUJQsVUJcdknc4-fS7zyjHIMfM30SGd52OS5w&usqp=CAU" alt="">
+           <h3>Update Profile</h3>
+           <p>Customer can update their profile after registration.</p>
+           <a href="#" class="btn">Read more</a>
+        </mat-card>
+       </div>
+       
+     
+     
+       <div class="box col-4">
+         <mat-card>
+         <img src="https://static.vecteezy.com/system/resources/thumbnails/003/184/173/small/vendor-or-seller-line-icon-vector.jpg" alt="">
+         <h3>Seller Convenience</h3>
+         <p>We provide add product functionality for the seller. So seller can easily post their product.</p>
+         <a href="#" class="btn">Read more</a>
+         </mat-card>
+       </div>
+     
+       <div class="box col-4">
+         <mat-card>
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_7hAIuOstuZkRP3skmOB0ia2P8JvctL-0E0_AjXLWk85ieGmdq7FdPgJkdp7b4wYUqDk&usqp=CAU" alt="">
+         <h3>Receipt</h3>
+         <p>We provide receipt after confirmation of payment.</p>
+         <a href="#" class="btn">Read more</a>
+         </mat-card>
+       </div>
+  </div>
+  </div>
+  </section>
+
+  <section class="bg-white border-b py-8">
+    <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+      <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+        About us
+      </h2>
+      <div class="w-full mb-4">
+        <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+      </div>
+      <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+          <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+            <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+              Plants, simplified
+            </p>
+            <div class="w-full font-bold text-xl text-gray-800 px-6">
+              Easy to plug
+            </div>
+            <p class="text-gray-800 text-base px-6 mb-5">
+              Order plants ready to be placed in your home, office or garden. Just Unpack, Relax and Enjoy your green buddies
+            </p>
+          </a>
+        </div>
+        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+          <div class="flex items-center justify-start">
+            <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+              Action
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+          <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+            <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+              Secure Shipping
+            </p>
+            <div class="w-full font-bold text-xl text-gray-800 px-6">
+              Fresh & Safe
+            </div>
+            <p class="text-gray-800 text-base px-6 mb-5">
+              Our unique packaging will hold the plants in place and let the plant breathe so that it reaches you fresh without any mess.
+            </p>
+          </a>
+        </div>
+        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+          <div class="flex items-center justify-center">
+            <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+              Action
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+          <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+            <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+              Detailed Guidance
+            </p>
+            <div class="w-full font-bold text-xl text-gray-800 px-6">
+              24x7 Guidance
+            </div>
+            <p class="text-gray-800 text-base px-6 mb-5">
+              Get detailed plant care instructions from the website as well as real-time guidance from our Garden Experts on Whatsapp.
+            </p>
+          </a>
+        </div>
+        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+          <div class="flex items-center justify-end">
+            <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+              Action
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+
+
+
+
+
+
+
+
+    <!-- <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+        <div class="container text-center">
+          <small>Copyright &copy; Prakrtik</small>
+        </div>
+      </footer> -->
+      <footer id="sticky-footer" class="bg-dark text-center text-white-50">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+      
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-twitter"></i
+            ></a>
+      
+            <!-- Google -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-google"></i
+            ></a>
+      
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-instagram"></i
+            ></a>
+      
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+      
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-github"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            Copyright &copy; Prakrtik
+          <!-- <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a> -->
+        </div>
+        <!-- Copyright -->
+      </footer>
+</body>
