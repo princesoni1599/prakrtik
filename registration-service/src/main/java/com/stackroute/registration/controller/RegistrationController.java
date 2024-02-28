@@ -13,7 +13,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
-//@CrossOrigin(origins={"http://localhost:4200", "http://localhost:8084"})
 
 public class RegistrationController {
     private RegistrationService registrationService;

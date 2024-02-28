@@ -13,12 +13,11 @@ import org.springframework.web.bind.annotation.*;
 import com.authencationservice.model.UserDao;
 import com.authencationservice.service.JwtUserDetailsService;
 import com.authencationservice.service.SecurityTokenGenerator;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-@RestController
-//@CrossOrigin(origins="http://localhost:4200")
-//@CrossOrigin(origins = "*", allowedHeaders = "*")
+@RestController 
+
 public class JwtController {
-
 
     @Autowired
     private SecurityTokenGenerator securityTokenGenerator;
@@ -26,7 +25,7 @@ public class JwtController {
     @Autowired
 
     private JwtUserDetailsService userDetailsService;
-
+    
     @RequestMapping(value = "/validate", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody UserDao userobject) throws Exception {
 
