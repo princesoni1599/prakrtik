@@ -1,4 +1,3 @@
-version: "2"
 services:
   eureka-server:
     build: eureka-server/
