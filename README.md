@@ -17,4 +17,10 @@
     <h1> </h1>
     <img src="https://github.com/princesoni1599/prakrtik/blob/main/images/Screenshot%202026-04-15%20at%206.15.42%E2%80%AFPM.png" width="800">
   </div>
+    <div align="center">
+        <h1 align="center"> Demo </h1>
+      <video width="600" controls>
+        <source src="videos/demo.mp4" type="video/mp4">
+      </video>
+  </div>
 </html>
