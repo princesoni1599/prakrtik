@@ -1,3 +1,14 @@
 <html>
-  <img src="https://github.com/princesoni1599/prakrtik/blob/main/Screenshot%202026-04-14%20at%208.06.29%E2%80%AFPM.png"alt="image" width="300" height="200">
+  <p align="center">
+  <img src="https://github.com/princesoni1599/prakrtik/blob/main/images/Screenshot%202026-04-15%20at%205.58.54%E2%80%AFPM.png" width="500">
+  </p>
+  <p align="center">
+  <img src="https://github.com/princesoni1599/prakrtik/blob/main/images/Screenshot%202026-04-15%20at%205.59.11%E2%80%AFPM.png" width="500">
+  </p>
+  <p align="center">
+  <img src="https://github.com/princesoni1599/prakrtik/blob/main/images/Screenshot%202026-04-15%20at%205.59.32%E2%80%AFPM.png" width="500">
+  </p>
+  <p align="center">
+  <img src="https://github.com/princesoni1599/prakrtik/blob/main/images/Screenshot%202026-04-15%20at%205.59.50%E2%80%AFPM.png" width="500">
+</p>
 </html>
